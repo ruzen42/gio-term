@@ -11,6 +11,25 @@
           inherit system;
         };
       in {
+        packages.default = pkgs.stdenv.mkDerivation {
+          pname = "gio-term";
+          version = "0.1.0";
+          src = ./.;
+          buildInputs = with pkgs; [
+            go 
+            vulkan-headers
+            wayland
+            libGL
+            pkg-config
+            vulkan-loader
+          ];
+
+          installPhase = ''
+            mkdir -p $out/bin
+            cp bin/gioterm $out/bin/
+          '';
+
+        };
         devShells = 
         {
           default = with pkgs;
@@ -19,11 +38,7 @@
                 ++ (if stdenv.isLinux then [
                   go
                   vulkan-headers
-                  libxkbcommon
                   wayland
-                  xorg.libX11
-                  xorg.libXcursor
-                  xorg.libXfixes
                   libGL
                   pkg-config
                 ] else

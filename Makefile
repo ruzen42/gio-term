@@ -2,14 +2,15 @@ BUILD_DIR=bin
 VERSION=0.1.0
 NAME=gioterm
 TAGS=nox11
+INSTALL_PREFIX=/usr/local
 
 .PHONY: all build clean run fmt install
 
 all: build
 
 install: build 
-	mkdir -p /usr/local/bin
-	cp $(BUILD_DIR)/$(NAME) /usr/local/bin/$(NAME)
+	mkdir -p $(INSTALL_PREFIX)/bin
+	cp $(BUILD_DIR)/$(NAME) $(INSTALL_PREFIX)/bin/$(NAME)
 
 build: fmt
 	@mkdir -p $(BUILD_DIR)
