@@ -1,6 +1,6 @@
 BUILD_DIR=bin
 VERSION=0.1.0
-NAME=gio
+NAME=gioterm
 TAGS=nox11
 
 .PHONY: all build clean run fmt install
