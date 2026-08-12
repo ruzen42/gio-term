@@ -1,6 +1,6 @@
 BUILD_DIR=bin
 VERSION=0.1.0
-NAME=gioterm
+NAME=gio-term
 TAGS=nox11
 INSTALL_PREFIX=/usr/local
 
