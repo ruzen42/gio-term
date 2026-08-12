@@ -1,6 +1,7 @@
-BUILD_DIR=output
+BUILD_DIR=bin
 VERSION=0.1.0
-NAME=main
+NAME=gio
+TAGS=nox11
 
 .PHONY: all build clean run fmt install
 
@@ -12,7 +13,7 @@ install: build
 
 build: fmt
 	@mkdir -p $(BUILD_DIR)
-	go build -ldflags "-X main.Version=$(VERSION)" -o $(BUILD_DIR)/$(NAME) .
+	go build -ldflags "-X main.Version=$(VERSION)" -o $(BUILD_DIR)/$(NAME) -tags $(TAGS) .
 
 clean:
 	rm -rf $(BUILD_DIR)
