@@ -1,21 +1,20 @@
-# Go Minimal Template
+# gio-term
 
-A lightweight, opinionated Go project starter template configured with a Makefile for rapid local development, build automation, and easy installation.
+A lightweight terminal emulator for wayland.
 
 ---
 
-## Features
+## TO DO
 
-* **Automated Workflow:** Pre-configured Makefile for building, running, formatting, and installing binaries.
-* **Version Injection:** Automatic compile-time versioning passed directly into `main.Version` via `-ldflags`.
-* **Clean Structure:** Standardized output path for compiled binaries (`output/`).
+- Alt mode
 
 ---
 
 ## Prerequisites
 
-* [Go](https://go.dev/doc/install) 1.26.4 or higher
+* [Go](https://go.dev/doc/install) 1.26.5 or higher
 * `make` utility (pre-installed on Linux/macOS, available via WSL or Chocolatey on Windows)
+* vulkan-headers, pkg-config, libxkbcommon, libGL, libX11/Xcursor/Xfixes
 
 ---
 
@@ -24,13 +23,14 @@ A lightweight, opinionated Go project starter template configured with a Makefil
 ### Clone and Run
 
 ```bash
-# Clone the template repository
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+# Clone 
+git clone https://github.com/ruzen42/gio-term # or git@github.com:ruzen42/gio-term for ssh
+cd gio-term
 
 # Build and run the project
-make run
-
+make build
+sudo make install # for cp /usr/local/bin 
+gio-term
 ```
 
 ---
@@ -74,20 +74,9 @@ make build NAME=myapp
 
 ---
 
-## Project Structure
-
-```text
-.
-├── output/           # Generated binary directory (git-ignored)
-├── go.mod            # Go module definition
-├── main.go           # Application entrypoint
-├── Makefile          # Build automation script
-└── README.md         # Project documentation
-
-```
 
 ---
 
 ## License
 
-This template is licensed under the [MIT License](https://www.google.com/search?q=LICENSE).
+This template is licensed under the [Unlicense]([https://unlicense.org/]).
