@@ -30,7 +30,7 @@ cd gio-term
 # Build and run the project
 make build
 sudo make install # for cp /usr/local/bin 
-gio-term
+gioterm
 ```
 
 ---
